@@ -17,8 +17,8 @@
 <div class="mek"> 
 <font color="gray" class="text-center text-gray mb-3" size="6"><center><br>-=|<marquee width="60%"></font>
 <font class="text-center text-gray mb-3" color="gray" size="6"><b>[ NO SYSTEM IS SAFE ]<b></font></marquee>|=-</center>
-</div><br>
-    <font color="gray" size="3" face="Courier New">Jangan biarkan manusia<br>menatap langit penuh harap,<br>biarkan langit gelap selamanya.<br><br> dan kami biarkan apa yang hanya kami izinkan</font><br><br>
+</div><br><br>
+    <font color="gray" size="3" face="Courier New">Jangan biarkan manusia<br>menatap langit penuh harap,<br>biarkan langit gelap selamanya.<br></font><br><br>
     <audio id="audioNotifikasi">
   <source src="https://k.top4top.io/m_2474z3eo21.mp3" type="audio/mpeg">
 </audio>
@@ -32,6 +32,35 @@ function playAudio() {
 function pauseAudio() { 
   el.pause(); 
 } 
+</script>
+<br><div class="clock"><div class="display">
+</div></div><br>
+<script>
+  setInterval(function(){
+    const clock = document.querySelector(".display");
+    let time = new Date();
+    let sec = time.getSeconds();
+    let min = time.getMinutes();
+    let hr = time.getHours();
+    let day = 'AM';
+    if(hr > 12){
+      day = 'PM';
+      hr = hr - 12;
+    }
+    if(hr == 0){
+      hr = 12;
+    }
+    if(sec < 10){
+      sec = '0' + sec;
+    }
+    if(min < 10){
+      min = '0' + min;
+    }
+    if(hr < 10){
+      hr = '0' + hr;
+    }
+    clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+  });
 </script>
   </center>
 </body>
